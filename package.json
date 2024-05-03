@@ -1,0 +1,12 @@
+{
+  "name": "cgfs",
+  "version": "0.0.1",
+  "description": "Context Graph File System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["nostr", "rxdb", "indexddb"],
+  "author": "Paul Mullins",
+  "license": "ISC"
+}
