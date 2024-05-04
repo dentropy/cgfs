@@ -6,7 +6,6 @@ export class CGFS {
     * Features
         * All collections get stored as a single CID hash sign chain
     * To Design
-        * We gotta store the seed phrase somewhere
         * How do we deal with migrations?
         * What do we do about collections we migrate from and their refernece
         * What about signing logs with the IPNS key?
@@ -18,6 +17,7 @@ export class CGFS {
             * Do we use a DID of the user, but that stops forking and requires rerendering
             * The data will be attached to the IPNS name of present, therefore databases need to be aware of the IPNS names that signed everything previously
         * Remember to check the RxDB version
+        * Link IPNS names to the collections
         * Track number of record in each index
         * I just learned that rxdb can do [Attachments](https://rxdb.info/rx-attachment.html)
         * The PKI collection should not be shared over RXDB's repplication system
@@ -50,10 +50,12 @@ export class CGFS {
     }
 
     setup(){
+        // * Create collection for seed phrase
         // * Create root collection
             // * IPNS names and stored the CID chain used logging
         // * Create schema collection
             // * stores the raw schema data fed into add_cgfs_collection
+        // * Create Schema Implimented collection that links to schema collection
         // * Create CID collection
         // * Create remote CID collection
         // * Create logging collection
