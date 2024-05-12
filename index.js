@@ -28,25 +28,25 @@ export class CGFS {
 
 
     create_cgfs_collection(){
-        // DO NOT USE FOR CORE COLLECTIONS root, logs, CID, PKI, etc. etc.
-        // Check if schema name is already in root collection
-        // Check JSON Schema is valid
-        // Create IPNS name (optionally from seed phrase)
-        // Store IPNS keys in PKI collection
-        // Create collection
-        // Save collection metadata to root collection
     }
     
 
-    cgfs_upsert(function_name, function_hash, ){
-        // Get collection metadata from root collection
-        // Set default previous hash
-        // Check if ID is already in rxdb
-            // If ID exists, update previous hash
-        // Upsert into data
-        // Add CID to CID store
-        // Update root collection metadata CID log
+    cgfs_upsert(
+        APPLICATION_ID,
+        APPLICATION_SOURCE_DID,
+        COLLECTION_NAME
+    ){
+    }
 
+    add_cgfs_function(
+        APPLICATION_ID,
+        APPLICATION_SOURCE_DID,
+        FUNCTION_NAME
+    ){
+    }
+
+    config_cgfs_auth(){
+        // Check dd-rbac from the nostr-nip05-server git repo
     }
 
     setup(){
@@ -69,39 +69,12 @@ export class CGFS {
             // app-name-to-role
     }
 
-    add_cgfs_collection(){
-        // * Check valid jsonSchema
-        // * Store in schema collection
-        // * Create IPNS Name
-        // * Create collection
-        // * Store IPNS key in PKI
-        // * Generate JSON to store in new collection metadata in root collection
-        // * Generate CID of new collection metadata in root collection
-        // * Store CID in CID collection
-        // * Store collection metadata in root collection
-    }
-
-    add_cgfs_function(){
-        // * We store functions which are raw strings of javascript
-          // * [How to turn a String into a JavaScript function call? - Stack Overflow](https://stackoverflow.com/questions/912596/how-to-turn-a-string-into-a-javascript-function-call)
-          // * [String to Function: NodeJS](https://chatgpt.com/share/797e0fd8-41a7-4f71-bd36-e207bfcabe21?oai-dm=1)
-        // 
-    }
-
-    config_cgfs_auth(){
-        // Check dd-rbac from the nostr-nip05-server git repo
-    }
-
-    run(){
-        // Check if function exists
-        // Check if signature on nostr event is configured to run function
-        // Try running the functions
-            // MAKE SURE FUNCTIONS CHECK EVERYTHING, WE DON't WANT SOME COLLECTIONS UPDATED AND NOT ALL OF THEM
-            // Return error if not sucessful
-        // Get the previous log state of the function
-        // Produce a new log
-        // Generate CID of new log
-        // Store CID of log
-        // Store the new log
+    run(
+        APPLICATION_ID,
+        APPLICATION_SOURCE_DID,
+        FUNCTION_NAME,
+        PERMISSION_ID,
+        SIGNED_PAYLOAD
+    ){
     }
 }
