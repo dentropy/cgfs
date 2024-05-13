@@ -19,15 +19,22 @@ export class CGFS {
     ){
     }
 
-    cgfs_add_function(
+    cgfs_deploy_function(
         APPLICATION_ID,
         APPLICATION_SOURCE_DID,
         FUNCTION_NAME
     ){
     }
 
-    cgfs_config_auth(){
-        // Check dd-rbac from the nostr-nip05-server git repo
+    cgfs_config_auth(
+        FROM_APPLICATION_ID,
+        FROM_APPLICATION_SOURCE_DID,
+        FUNCTION_NAME,
+        PERMISSION_TYPE,
+        TO_APPLICATION_ID,
+        TO_APPLICATION_SOURCE_DID,
+        RESOURCE_NAME
+    ){
     }
 
     cgfs_setup(
@@ -51,4 +58,6 @@ export class CGFS {
         APP_DID_CONTENT
     ){
     }
+
+    cgfs_query(){}
 }
