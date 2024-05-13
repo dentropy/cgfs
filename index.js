@@ -1,63 +1,62 @@
 export class CGFS {
-    constructor(rxdb_config, seed_phrase){
-
-    }
-
-    cgfs_create_collection(
-        APPLICATION_ID,
-        APPLICATION_SOURCE_DID,
-        COLLECTION_NAME
-    ){
-    }
-    
-
-    cgfs_upsert(
-        APPLICATION_ID,
-        APPLICATION_SOURCE_DID,
-        COLLECTION_NAME,
-        UPSERT_QUERY
+    constructor(
+        RXDB_CONFIG,
+        SEED_PHRASE
     ){
     }
 
-    cgfs_deploy_function(
-        APPLICATION_ID,
-        APPLICATION_SOURCE_DID,
-        FUNCTION_NAME
-    ){
-    }
-
-    cgfs_config_auth(
-        FROM_APPLICATION_ID,
-        FROM_APPLICATION_SOURCE_DID,
-        FUNCTION_NAME,
-        PERMISSION_TYPE,
-        TO_APPLICATION_ID,
-        TO_APPLICATION_SOURCE_DID,
-        RESOURCE_NAME
-    ){
-    }
-
-    cgfs_setup(
-        ROOT_NOSTR_NPUB,
-        RXDB_CONFIG
-    ){
-    }
-
-    cgfs_run(
-        APPLICATION_ID,
-        APPLICATION_SOURCE_DID,
-        FUNCTION_NAME,
-        PERMISSION_ID,
-        SIGNED_PAYLOAD
-    ){
-    }
 
     cgfs_add_app(
         APP_DID,
         APP_DID_CID,
-        APP_DID_CONTENT
+        APP_DID_CONTENT,
+        APP_DEPLOY_DID
     ){
     }
 
-    cgfs_query(){}
+    cgfs_create_collection(
+        APP_DEPLOY_DID,
+        APP_SOURCE_DID
+    ){
+    }
+    
+
+    cgfs_deploy_function(
+        APPLICATION_DEPLOY_DID,
+        APPLICATION_SOURCE_DID
+    ){
+    }
+
+    cgfs_config_auth(
+        PERMISSION_DID,
+        FROM_APP_SOURCE_DID,
+        FROM_APP_DEPLOY_DID,
+        PERMISSION_TYPE,
+        TO_APP_SOURCE_DID,
+        TO_APP_DEPLOY_DID
+    ){
+    }
+
+    cgfs_upsert(
+        APP_DEPLOY_DID,
+        APP_SOURCE_DID,
+        PERMISSION_DID,
+        QUERY_CONTENTS
+    ){
+    }
+
+    cgfs_query(
+        APP_SOURCE_DID,
+        APP_DEPLOY_DID,
+        PERMISSION_DID,
+        QUERY_CONTENTS
+    ){}
+
+    cgfs_run(
+        APP_DEPLOY_DID,
+        APP_SOURCE_DID,
+        PERMISSION_DID,
+        QUERY_CONTENTS 
+    ){
+    }
 }
